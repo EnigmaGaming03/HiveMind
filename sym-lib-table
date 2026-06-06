@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "Breakout board symbols") (type "KiCad") (uri "/Users/shreyanshdora/Downloads/ESP32-Camera-PCB-main/symbols.kicad_sym") (options "") (descr ""))
+)
