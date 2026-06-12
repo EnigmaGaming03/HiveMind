@@ -1,0 +1,303 @@
+HiveMind ESP32 Swarm Simulator
+
+Build a fully interactive web application called HiveMind Simulator.
+
+The purpose of the application is to simulate a network of ESP32-based nodes communicating with each other and a central controller. This is a software-only simulation and should not interact with real hardware.
+
+Core Concept
+
+Users should be able to:
+
+Create a central controller node.
+Add multiple ESP32 nodes to a virtual environment.
+Connect nodes to the controller.
+Simulate mesh networking between nodes.
+Send commands from the controller.
+Observe how commands propagate through the network.
+Simulate autonomous movement, scanning, mapping, and task allocation.
+
+The simulation should feel like a simplified drone/robot swarm management platform.
+
+Technology Stack
+
+Frontend:
+
+React
+TypeScript
+TailwindCSS
+React Flow (for network visualization)
+Framer Motion
+
+Backend:
+
+Node.js
+Express
+
+Simulation Engine:
+
+Runs entirely in-browser
+No external hardware
+No real ESP32 integration
+Main Interface Layout
+Left Sidebar
+
+Node Management Panel
+
+Buttons:
+
+Add ESP32 Node
+Remove Node
+Add Controller
+Reset Simulation
+
+Node properties:
+
+Node Name
+Node ID
+Battery %
+Signal Strength
+Status
+Position
+Role
+
+Roles:
+
+Scout
+Mapper
+Relay
+Worker
+Controller
+Center
+
+Interactive Map
+
+2D top-down grid environment.
+
+Features:
+
+Zoom
+Pan
+Grid snapping
+Obstacle placement
+Custom map size
+
+User can:
+
+Draw obstacles
+Define restricted zones
+Define mission areas
+Define scanning zones
+Right Sidebar
+
+Command Center
+
+Command input box.
+
+Examples:
+
+MOVE NODE_3 TO (50,70)
+
+SCAN AREA A
+
+FORM RELAY CHAIN
+
+EXPLORE UNKNOWN REGION
+
+RETURN TO BASE
+
+CREATE SWARM
+
+MAP ENTIRE AREA
+
+SEARCH GRID
+
+Commands should be interpreted and visualized.
+
+Network Simulation
+
+Display:
+
+Controller
+ESP32 nodes
+Communication links
+
+Each node should have:
+
+Simulated RSSI
+Latency
+Packet loss
+Battery level
+
+Visualize:
+
+Green:
+Healthy connection
+
+Yellow:
+Weak connection
+
+Red:
+Disconnected
+
+Communication Logic
+
+When controller sends command:
+
+Controller
+
+↓
+
+Relay Nodes
+
+↓
+
+Target Nodes
+
+Users should see:
+
+Packet movement animation
+Message propagation
+Routing decisions
+Failed transmissions
+Swarm Behavior System
+
+Nodes should support:
+
+Roaming
+
+Random exploration.
+
+Area Search
+
+User selects area.
+
+Nodes spread out intelligently.
+
+Mapping
+
+Nodes build occupancy maps.
+
+Store:
+
+Visited cells
+Unvisited cells
+Obstacles
+Scan Mode
+
+Nodes scan nearby cells.
+
+Display scan radius.
+
+AI Task Allocation
+
+Simulate a lightweight HiveMind algorithm.
+
+Features:
+
+Divide area among nodes
+Avoid duplicate coverage
+Reassign tasks if node fails
+Dynamic route planning
+
+Example:
+
+Node 1 scans north.
+
+Node 2 scans east.
+
+Node 3 acts as relay.
+
+Node 4 maps center.
+
+Simulation Dashboard
+
+Display:
+
+Total Nodes
+
+Connected Nodes
+
+Coverage %
+
+Mapped Area %
+
+Average Signal
+
+Average Battery
+
+Active Tasks
+
+Mission Time
+
+Visual Effects
+
+Show:
+
+Moving nodes
+
+Communication pulses
+
+Scanning rings
+
+Coverage heatmaps
+
+Signal strength overlays
+
+Live network graph
+
+Animated packet transfers
+
+Advanced Features
+Failure Simulation
+
+User can:
+
+Disable node
+Drain battery
+Break connection
+
+Swarm automatically adapts.
+
+Multi-Hop Routing
+
+Nodes relay messages through other nodes.
+
+Visualize routing path.
+
+Formation Control
+
+Commands:
+
+LINE
+
+V-FORMATION
+
+GRID
+
+CIRCLE
+
+SWARM CLUSTER
+
+Nodes move accordingly.
+
+Mission Scenarios
+
+Prebuilt scenarios:
+
+Search and Rescue
+Warehouse Mapping
+Forest Survey
+Security Patrol
+Disaster Assessment
+User Experience
+
+The simulator should feel like a mix of:
+
+Mission Control
+Drone Swarm Dashboard
+Mesh Network Visualizer
+RTS Command Interface
+
+Everything should update in real time with smooth animations and responsive controls.
+
+Generate a complete production-ready MVP with clean architecture, reusable React components, modular simulation logic, and room for future real ESP32 integration.
